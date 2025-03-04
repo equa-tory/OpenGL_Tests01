@@ -1,0 +1,14 @@
+# glad
+g++ main.cpp glad/src/glad.c -o test.o -Iglad/include -lglfw -framework OpenGL
+
+# old
+g++ main.cpp -o test.o -I/opt/homebrew/include -L/opt/homebrew/lib -lglfw -lGLEW -framework OpenGL && ./test.o
+
+# glew + glad
+g++ main.cpp glad/src/glad.c -o test.o -Iglad/include -I/opt/homebrew/include -L/opt/homebrew/lib -lglfw -lGLEW -framework OpenGL
+
+# new glad
+g++ main.cpp glad/src/glad.c -o test.o -Iglad/include -I/opt/homebrew/include -L/opt/homebrew/lib -lglfw -framework OpenGL
+
+# last (works)
+g++ main.cpp glad/src/glad.c -o test.o -Iglad/include -I/opt/homebrew/include -L/opt/homebrew/lib -lglfw -framework OpenGL && ./test.o
